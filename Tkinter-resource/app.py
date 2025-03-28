@@ -246,9 +246,9 @@ class VideoPlayerApp:
         self.start_label.pack(side=tk.TOP,pady=(0, 10))
 
         self.start_entry = tk.Entry(self.trim_container)
-        self.start_entry.insert(0, "Start Time :")
-        self.start_entry.config(fg='gray')
-        self.start_entry.pack(side=tk.TOP,pady=(0, 10))
+        # self.start_entry.insert(0, "Start Time :")
+        # self.start_entry.config(fg='gray')
+        # self.start_entry.pack(side=tk.TOP,pady=(0, 10))
 
         self.end_entry = tk.Entry(self.trim_container)
         self.end_entry.insert(0, "End Time :")
@@ -389,7 +389,7 @@ class VideoPlayerApp:
         if self.start_entry.cget('fg') == 'gray':
             self.start_entry.delete(0, "end")  # delete all the text in the entry
             self.start_entry.insert(0, '')  # Insert blank for user input
-            self.start_entry.config(fg='black')  # Set the text color to black
+            # self.start_entry.config(fg='black')  # Set the text color to black
 
     def on_trim(self,event):
         if self.start_entry.get() == '':
@@ -497,7 +497,7 @@ class VideoPlayerApp:
         current_time = self.player.get_time() / 1000
         jump_seconds = 5
         new_time = max(current_time - jump_seconds, 0)
-        self.player.set_time(int(new_time * 1000))
+        # self.player.set_time(int(new_time * 1000))
 
 
     def upload_file(self):
@@ -577,7 +577,7 @@ class VideoPlayerApp:
                 self.tree.column("QR CODE", width=220)
                 self.tree.column("Name", width=220)
                 self.tree.column("Company Name", width=220)
-                self.tree.column("Phone", width=220)
+                # self.tree.column("Phone", width=220)
                 self.tree.column("Email", width=220)
                 self.tree.column("DATE AND TIME", width=220)
 
@@ -662,7 +662,7 @@ class VideoPlayerApp:
 
     def extract_times(self):
         if self.video_path:
-            self.initial_time_str = get_initial_time(self.video_path)
+            # self.initial_time_str = get_initial_time(self.video_path)
             self.end_time_str = get_video_end_time(self.video_path)
             
             self.initial_time_label.configure(text=f"Initial Time: {self.initial_time_str}")
